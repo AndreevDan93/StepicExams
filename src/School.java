@@ -1,4 +1,7 @@
+import java.util.Comparator;
+
 class School {
+
     int schoolMidNumber;
     double MathMidScore;
     double russianMidScore;
@@ -63,4 +66,13 @@ class School {
                 ", midScore=" + midScore +
                 '}';
     }
+
+    public static final Comparator<School> COMPARE_BY_MIDSCORE = new Comparator<School>() {
+        @Override
+        public int compare(School lhs, School rhs) {
+
+
+            return (int) (rhs.getMidScore() - lhs.getMidScore());
+        }
+    };
 }
